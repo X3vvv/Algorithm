@@ -90,7 +90,9 @@ int **read_as_adj_matrix(int num_of_nodes) {
 
 node_t *read_as_adj_lists(int num_of_nodes) {
     // index of adj_list = node ID - 1
-    node_t *adj_list = malloc(sizeof(node_t) * num_of_nodes);
+    node_t *adj_list = calloc(
+        num_of_nodes + 1,
+        sizeof(node_t)); // initialize an extra position to detect list end
 
     int max_width_of_node_id = get_num_of_digits(num_of_nodes);
     printf("Input the IDs of all adjacent node to the following nodes "
@@ -126,6 +128,7 @@ node_t *read_as_adj_lists(int num_of_nodes) {
                 next_node->id = adj_node_id;
                 next_node->next = NULL;
                 ptr_curr_node->next = next_node;
+                ptr_curr_node = ptr_curr_node->next;
             }
 
             if (getchar() == '\n') // read in whiltespace or newline
