@@ -28,7 +28,7 @@ void BFS(int root_id, node_t *adj_list, int **adj_matrix) {
             while (1) {
                 ++num_of_adj_nodes;
                 if (ptr_node->next == NULL)
-                    break;
+                    break; 
                 ptr_node = ptr_node->next;
             }
             if (num_of_adj_nodes > max_num_of_adj_nodes)
