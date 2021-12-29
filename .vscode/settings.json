@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "Makefile": "csharp",
+        "utils.h": "c"
+    }
+}

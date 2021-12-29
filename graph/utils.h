@@ -52,4 +52,23 @@ int **read_as_adj_matrix(int num_of_nodes);
  */
 node_t *read_as_adj_lists(int num_of_nodes);
 
+/**
+ * @brief Find out how many values there are in the array before meet a NULL.
+ *
+ * @param arr the array to get the length of
+ * @return int the length of the array
+ */
+int get_arr_len(int *arr);
+
+#define MAX_BFS_LIST_LEN 100
+/**
+ * @brief BFS traverse the graph and print visited nodes' IDs.
+ * TODO: Implement the adjacent matrix version.
+ *
+ * @param root_id id of the root node. node-index = id - 1
+ * @param adj_list pointer to adjacency list
+ * @param adj_matrix pointer to adjacency matrix
+ */
+void BFS(int root_id, node_t *adj_list, int **adj_matrix);
+
 #endif
