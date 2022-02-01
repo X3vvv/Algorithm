@@ -1,5 +1,6 @@
 #include "utils.h"
 
+void DFS(int root_id) {}
 
 int main(void) {
     // assume the IDs of nodes in the graph start from 1 and are successive
