@@ -1,3 +1,4 @@
+from cgitb import small
 from typing import List
 import math
 
@@ -54,6 +55,23 @@ def startMergeSort(array) -> None:
     mergeSort(array)
 
 
-data = [5, 4, 3, 2, 1]
+def selectionSort(array) -> List:
+    if len(array) <= 0:
+        raise RuntimeError("Array must not be empty.")
 
-startMergeSort(data)
+    for i in range(len(array)):
+        # initialize
+        smallest_idx = i
+        smallest = array[smallest_idx]
+        # start
+        for j in range(i, len(array)):
+            if array[j] < smallest:
+                smallest_idx, smallest = j, array[j]
+        array[i], array[smallest_idx] = array[smallest_idx], array[i]
+        print(array)
+
+
+data = [5, 3, 4, 1, 2]
+
+# startMergeSort(data)
+selectionSort(data)
